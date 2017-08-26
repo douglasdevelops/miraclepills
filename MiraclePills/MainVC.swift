@@ -47,8 +47,6 @@ class MainVC: UIViewController {
     // MARK: - IBActions
     @IBAction func PickStateButtonPressed(_ sender: AnyObject) {
         statePicker.isHidden = false
-        //Country.isHidden = true
-        // CountryTextBox.isHidden = true
         btnBuyNow.isHidden = true
     }
     

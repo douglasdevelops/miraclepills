@@ -50,8 +50,6 @@ class MainVC: UIViewController {
         btnBuyNow.isHidden = true
     }
     
-    
-    
     @IBAction func btnBuyNowPressed(_ sender: AnyObject) {
         SetupUIAfterPurchase()
         AnimateSuccessButton()

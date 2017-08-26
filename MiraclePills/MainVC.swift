@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
+class MainVC: UIViewController {
+    
+    // MARK: - IBOutlet
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var statePickerButton: UIButton!
     @IBOutlet weak var Country: UILabel!
@@ -31,8 +32,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var lblState: UILabel!
     @IBOutlet weak var btnStartOver: UIButton!
     
-    let states = ["Vermont","New Hampshire", "Texas","California","Maine","Florida"]
+    let states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
     
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,41 +43,28 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         btnStartOver.isHidden = true
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
+    // MARK: - IBActions
     @IBAction func PickStateButtonPressed(_ sender: AnyObject) {
         statePicker.isHidden = false
-        Country.isHidden = true
-        CountryTextBox.isHidden = true
+        //Country.isHidden = true
+        // CountryTextBox.isHidden = true
         btnBuyNow.isHidden = true
-        }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1;
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return states.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return states[row]
-    }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        statePickerButton.setTitle(states[row], for: UIControlState.normal)
-        statePicker.isHidden = true
-        CountryTextBox.isHidden = false
-        Country.isHidden = false
-        btnBuyNow.isHidden = false
-        
-    }
     
     @IBAction func btnBuyNowPressed(_ sender: AnyObject) {
+        SetupUIAfterPurchase()
+        AnimateSuccessButton()
+    }
+    
+    @IBAction func btnStartOverPressed(_ sender: AnyObject) {
+        ResetUIElementsToDefault()
+    }
+    
+    // MARK: - User Functions
+    func SetupUIAfterPurchase() {
         statePicker.isHidden = true
         statePickerButton.isHidden = true
         Country.isHidden = true
@@ -98,30 +87,39 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         btnStartOver.isHidden = false
     }
     
-    @IBAction func btnStartOverPressed(_ sender: AnyObject) {
+    func AnimateSuccessButton() {
+        UIView.animate(withDuration: 0.5) {
+            self.imgSuccess.alpha = 1.0
+        }
+    }
+    
+    func ResetUIElementsToDefault() {
         statePicker.isHidden = true
         statePickerButton.isHidden = false
+        statePicker.reloadAllComponents()
+        
         Country.isHidden = false
         CountryTextBox.isHidden = false
-        btnBuyNow.isHidden = false
+        
         imgSuccess.isHidden = true
         imgPill.isHidden = false
+        
         lblMiraclePills.isHidden = false
         lblPillCost.isHidden = false
         lblDivider.isHidden = false
         lblFullName.isHidden = false;
         lblStreetAddress.isHidden = false
+        lblCity.isHidden = false
+        lblCountry.isHidden = false
+        lblState.isHidden = false
+        
         txtFullName.isHidden = false
         txtStreetAddress.isHidden = false
-        lblCity.isHidden = false
         txtCity.isHidden = false
-        lblCountry.isHidden = false
         txtCountry.isHidden = false
-        lblState.isHidden = false
+        
         btnStartOver.isHidden = true
-
+        btnBuyNow.isHidden = false
     }
-    
-    
-    }
+}
 

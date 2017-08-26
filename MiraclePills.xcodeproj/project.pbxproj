@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		229BE0901F50FD040046274C /* ExtPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229BE08F1F50FD040046274C /* ExtPickerView.swift */; };
 		22AC5A551D7D037A0023DD2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC5A541D7D037A0023DD2E /* AppDelegate.swift */; };
-		22AC5A571D7D037A0023DD2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC5A561D7D037A0023DD2E /* ViewController.swift */; };
+		22AC5A571D7D037A0023DD2E /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC5A561D7D037A0023DD2E /* MainVC.swift */; };
 		22AC5A5A1D7D037A0023DD2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22AC5A581D7D037A0023DD2E /* Main.storyboard */; };
 		22AC5A5C1D7D037A0023DD2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AC5A5B1D7D037A0023DD2E /* Assets.xcassets */; };
 		22AC5A5F1D7D037A0023DD2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22AC5A5D1D7D037A0023DD2E /* LaunchScreen.storyboard */; };
@@ -34,9 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		229BE08F1F50FD040046274C /* ExtPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtPickerView.swift; sourceTree = "<group>"; };
 		22AC5A511D7D037A0023DD2E /* MiraclePills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiraclePills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AC5A541D7D037A0023DD2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22AC5A561D7D037A0023DD2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22AC5A561D7D037A0023DD2E /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		22AC5A591D7D037A0023DD2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22AC5A5B1D7D037A0023DD2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22AC5A5E1D7D037A0023DD2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,11 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				22AC5A541D7D037A0023DD2E /* AppDelegate.swift */,
-				22AC5A561D7D037A0023DD2E /* ViewController.swift */,
+				22AC5A561D7D037A0023DD2E /* MainVC.swift */,
 				22AC5A581D7D037A0023DD2E /* Main.storyboard */,
 				22AC5A5B1D7D037A0023DD2E /* Assets.xcassets */,
 				22AC5A5D1D7D037A0023DD2E /* LaunchScreen.storyboard */,
 				22AC5A601D7D037A0023DD2E /* Info.plist */,
+				229BE08F1F50FD040046274C /* ExtPickerView.swift */,
 			);
 			path = MiraclePills;
 			sourceTree = "<group>";
@@ -259,7 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22AC5A571D7D037A0023DD2E /* ViewController.swift in Sources */,
+				229BE0901F50FD040046274C /* ExtPickerView.swift in Sources */,
+				22AC5A571D7D037A0023DD2E /* MainVC.swift in Sources */,
 				22AC5A551D7D037A0023DD2E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +509,7 @@
 				22AC5A7B1D7D037A0023DD2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22AC5A7C1D7D037A0023DD2E /* Build configuration list for PBXNativeTarget "MiraclePillsTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +518,7 @@
 				22AC5A7E1D7D037A0023DD2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22AC5A7F1D7D037A0023DD2E /* Build configuration list for PBXNativeTarget "MiraclePillsUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +527,7 @@
 				22AC5A811D7D037A0023DD2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
